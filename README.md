@@ -1,5 +1,19 @@
 # Assessment-Java-Full-Stack-Application
 
+## Technical Requirements:
+Unless it's modified by a stretch goal (see below), the following are strict technical
+requirements.
+1. Manage 4-7 database tables (entities) that are independent concepts. A simple
+bridge table doesn't count.
+2. MySQL for data management
+3. Spring Boot, MVC, JDBC, Testing, and Security
+4. An HTML and CSS UI that's built with React or Thymeleaf
+5. At least one async JavaScript HTTP request for a Thymeleaf project
+6. Sensible layering and pattern choices
+7. At least one UI secured by role
+8. A full test suite that covers the domain and data layers
+
+
 ## Project Planning:
 
 ### Game Discovery App
