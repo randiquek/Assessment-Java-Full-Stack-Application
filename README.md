@@ -13,6 +13,19 @@ bridge table doesn't count.
 7. At least one UI secured by role
 8. A full test suite that covers the domain and data layers
 
+## Technology Stack
+
+Backend
+
+- Java: Core business logic and data processing
+- Spring Boot: Production ready configuration files
+- MySQL: Relational database for storing app data (rally data, users data)
+- Node.js: API server requests
+
+Frontend
+
+- React.js: Component library for modern app design
+
 
 ## Project Planning:
 
