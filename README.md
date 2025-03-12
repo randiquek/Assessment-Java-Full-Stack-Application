@@ -2,33 +2,32 @@
 
 ## Project Planning:
 
-### Multiplayer Match-Making Server (if time permits)
-
-Players can search for a match based on user info (such as level, role, or rank). Once matched, a game lobby is created.
+### Game Discovery App
 
 #### Must Have
 - User authentication
-- Option to create or leave lobby
-- Match player search algorithm based on level, role, or rank
-- Party leader feature of adding/removing players
+- Repo of games from Xbox API (or any game api)
+- Search/filter games
+- Write Reviews?
+- Wishlist feature
+- User Profiles
+- Admin Access/Capabilities
 
 #### Could Have
-- Chat lobby
-- Ready check
+- Game Recommendations
 
 #### Won't Have
-- Functionality to start a game
+- Add Friends/Friends List Capabilities 
 
-### Administrator User Story
+
+
+### User Story
 - User logs in
-- User can choose to start a game from the menu
-- User becomes party leader 
-- Party leader can choose their role
-- Party leader can begin search for other players based on roles needed (tank, damage, or healer)
-- Once other players are found, game lobby is then created.
-- Party leader can remove players and find new ones. 
-- Party leader can then choose to start a game (but won't be functional)
-- Party leader can also choose to disband party/delete the lobby, and is brought back to main menu to start a new game or exit. 
+- User is presented with main page that displays top featured games
+- User can view games by genre, top games, or new games
+- User can view games and add to a wishlist
+- User can also write a review for the game they are viewing (or even add a game rating)
+- User can also view their profile
 
 ### Project Roadmap
 1. 3-10 Monday
