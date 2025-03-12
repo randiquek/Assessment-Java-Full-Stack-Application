@@ -22,13 +22,13 @@ bridge table doesn't count.
 - User authentication
 - Repo of games from Xbox API (or any game api)
 - Search/filter games
-- Write Reviews?
 - Wishlist feature
 - User Profiles
 - Admin Access/Capabilities
 
 #### Could Have
 - Game Recommendations
+- Write Reviews
 
 #### Won't Have
 - Add Friends/Friends List Capabilities 
