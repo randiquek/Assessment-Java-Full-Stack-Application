@@ -29,6 +29,12 @@
 - User can also write a review for the game they are viewing (or even add a game rating)
 - User can also view their profile
 
+### Admin Story
+- Admin logs in with credentials
+- Admin can add/update games
+- Admin can also remove users and reviews
+- Admin can also view reports such as popular games being added to wishlists by users
+
 ### Project Roadmap
 1. 3-10 Monday
 1. 3-11 Tuesday - React All Day
