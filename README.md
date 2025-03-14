@@ -42,6 +42,7 @@ Frontend
 #### Could Have
 - Game Recommendations
 - Write Reviews
+- Admin can add/update games
 
 #### Won't Have
 - Add Friends/Friends List Capabilities 
@@ -58,7 +59,6 @@ Frontend
 
 ### Admin Story
 - Admin logs in with credentials
-- Admin can add/update games
 - Admin can also remove users and reviews
 - Admin can also view reports such as popular games being added to wishlists by users
 
