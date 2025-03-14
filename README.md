@@ -35,7 +35,7 @@ Frontend
 #### Must Have
 - User authentication
 - Repo of games from Xbox API (or any game api)
-- Search/filter games
+- Filter games by genre, top games, or new games
 - Wishlist feature
 - User Profiles
 - Admin Access/Capabilities
@@ -43,6 +43,7 @@ Frontend
 #### Could Have
 - Game Recommendations
 - Write Reviews
+- Search bar feature
 - Admin can add/update games
 
 #### Won't Have
@@ -55,7 +56,7 @@ Frontend
 - User is presented with main page that displays top featured games
 - User can view games by genre, top games, or new games
 - User can view games and add to a wishlist
-- User can also write a review for the game they are viewing (or even add a game rating)
+- User can also write a review for the game they are viewing
 - User can also view their profile
 
 ### Admin Story
