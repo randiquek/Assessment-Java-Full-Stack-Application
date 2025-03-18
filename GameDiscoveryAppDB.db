@@ -25,10 +25,13 @@ create table user (
 create table wishlist (
 	wishlist_id int primary key auto_increment,
     game_id int not null,
+    user_id varchar(128) not null,
     username varchar(128) not null,
     date_added date not null,
 		foreign key (game_id)
         references game (game_id),
+        foreign key (user_id)
+        references user (user_id),
         foreign key (username)
         references user (username)
 );
@@ -36,11 +39,14 @@ create table wishlist (
 create table review (
 	review_id int primary key auto_increment,
     review_title varchar(128) not null, 
+    user_id varchar(128) not null,
     username varchar(128) not null,
     game_id int not null,
     date_posted date not null,
     review_body varchar(360) not null,
-		foreign key (username)
+		foreign key (user_id)
+        references user (user_id),
+        foreign key (username)
         references user (username),
         foreign key (game_id)
         references game (game_id)
@@ -56,13 +62,13 @@ INSERT INTO game (title, genre, release_date, developer, description, rating) VA
 ('Remnant: From The Ashes', 'Action RPG', '2019-08-20', 'Gunfire Games', 'A co-op survival-action shooter.', 8),
 ('Orcs Must Die 3', 'Tower Defense', '2020-07-14', 'Robot Entertainment', 'Strategic and chaotic tower defense gameplay.', 8),
 ('Deep Rock Galactic', 'FPS Co-op', '2020-05-13', 'Ghost Ship Games', 'A co-op game with mining and alien battles.', 9),
-('Avowed', 'RPG', '2024-12-01', 'Obsidian Entertainment', 'An epic RPG in a fantasy world.', NULL),
+('Avowed', 'RPG', '2024-12-01', 'Obsidian Entertainment', 'An epic RPG in a fantasy world.', 0),
 ('Roblox', 'Sandbox', '2006-09-01', 'Roblox Corporation', 'A platform for creating and playing games.', 8),
 ('Vampire Survivors', 'Action Roguelike', '2021-12-17', 'Luca Galante', 'Survive waves of monsters with evolving abilities.', 9),
-('Marvel Rivals', 'Action', '2023-06-15', 'Marvel Games', 'A dynamic game with iconic Marvel heroes.', NULL),
+('Marvel Rivals', 'Action', '2023-06-15', 'Marvel Games', 'A dynamic game with iconic Marvel heroes.', 0),
 ('Overwatch', 'Shooter', '2016-05-24', 'Blizzard Entertainment', 'A team-based FPS with unique heroes.', 9),
 ('Diablo 4', 'Action RPG', '2023-06-06', 'Blizzard Entertainment', 'A dark action RPG in the Diablo series.', 9),
-('Starcraft 3', 'Strategy', '2024-09-15', 'Blizzard Entertainment', 'A futuristic real-time strategy game.', NULL),
+('Starcraft 3', 'Strategy', '2024-09-15', 'Blizzard Entertainment', 'A futuristic real-time strategy game.', 0),
 ('Roboquest', 'Roguelike Shooter', '2020-08-20', 'RyseUp Studios', 'High-energy roguelike shooter with robots.', 8),
 ('Assassin\'s Creed: Origins', 'Action RPG', '2017-10-27', 'Ubisoft', 'Explore ancient Egypt as an assassin.', 9),
 ('Destiny 2', 'Shooter', '2017-09-06', 'Bungie', 'An online multiplayer sci-fi shooter.', 8),
@@ -76,15 +82,15 @@ INSERT INTO game (title, genre, release_date, developer, description, rating) VA
 ('Halo Wars 2', 'Strategy', '2017-02-21', '343 Industries', 'A real-time strategy game set in the Halo universe.', 8),
 ('Gears of War 4', 'Shooter', '2016-10-11', 'The Coalition', 'A gritty third-person shooter.', 8),
 ('League of Legends', 'MOBA', '2009-10-27', 'Riot Games', 'A competitive online MOBA game.', 9),
-('Palworld', 'Action-Adventure', '2023-06-15', 'Pocketpair', 'An adventure with creature-collecting and survival.', NULL);
+('Palworld', 'Action-Adventure', '2023-06-15', 'Pocketpair', 'An adventure with creature-collecting and survival.', 0);
 
 INSERT INTO user (user_id, first_name, last_name, username, password, authority, created_at) VALUES 
 (UUID(), 'Lilith', 'K', 'Mellifluous299', 'pass', 'USER', '2025-03-17'),
 (UUID(), 'Admin', 'Admin', 'admin', 'password', 'ADMIN', '2025-03-17');
 
-INSERT INTO wishlist (game_id, username, date_added) VALUES
-((SELECT game_id FROM game WHERE title = 'Palworld'), 'Mellifluous299', '2025-03-17');
+INSERT INTO wishlist (game_id, user_id, username, date_added) VALUES
+((SELECT game_id FROM game WHERE title = 'Palworld'), (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', '2025-03-17');
 
-INSERT INTO review (review_title, username, game_id, date_posted, review_body) VALUES 
-('Breath-Taking Visuals', 'Mellifluous299', (SELECT game_id FROM game WHERE title = 'No Man\'s Sky'), '2025-03-17', 'This game has amazing visuals with incredible detail and vast exploration');
+INSERT INTO review (review_title, user_id, username, game_id, date_posted, review_body) VALUES 
+('Breath-Taking Visuals', (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', (SELECT game_id FROM game WHERE title = 'No Man\'s Sky'), '2025-03-17', 'This game has amazing visuals with incredible detail and vast exploration');
         
