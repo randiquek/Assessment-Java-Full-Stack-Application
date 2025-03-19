@@ -4,8 +4,9 @@ import '../App.css'
 export default function Header() {
 
     return (
-        <div className="main-header">
+        <div className="header-text">
             <h1>XDiscovery</h1>
         </div>
+        
     )
 }
