@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import HomeBody from './components/HomeBody'
+import HomePage from './components/HomePage'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   
 
   return (
     <>
-      <h1>Game Repository</h1>
-      <HomeBody/>
+      <Header/>
+      <HomePage/>
     </>
   )
 }
