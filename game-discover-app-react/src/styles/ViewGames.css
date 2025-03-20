@@ -1,0 +1,34 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 200px;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+h3 {
+    color: #b8b42d;
+}
+
+.game-item {
+    width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+}
+.page-container {
+    display: flex;
+}
+.filter-container {
+    border: 2px solid #b8b42d;
+    width: 70%;
+    margin-top: 200px;
+    margin-bottom: 500px;
+}

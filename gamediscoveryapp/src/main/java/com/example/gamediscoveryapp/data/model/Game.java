@@ -18,11 +18,12 @@ public class Game {
     String developer;
     String description;
     int rating;
+    String image;
 
     public Game() {
     }
 
-    public Game(int gameId, String title, String genre, LocalDate releaseDate, String developer, String description, int rating) {
+    public Game(int gameId, String title, String genre, LocalDate releaseDate, String developer, String description, int rating, String image) {
         this.gameId = gameId;
         this.title = title;
         this.genre = genre;
@@ -30,6 +31,7 @@ public class Game {
         this.developer = developer;
         this.description = description;
         this.rating = rating;
+        this.image = image;
     }
 
     public int getGameId() {
@@ -88,6 +90,13 @@ public class Game {
         this.rating = rating;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     @Override
     public String toString() {
@@ -99,6 +108,7 @@ public class Game {
                 ", developer='" + developer + '\'' +
                 ", description='" + description + '\'' +
                 ", rating=" + rating +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

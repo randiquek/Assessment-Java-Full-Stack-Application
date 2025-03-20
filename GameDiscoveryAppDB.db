@@ -9,7 +9,8 @@ create table game (
     release_date date not null,
     developer varchar(128) not null,
     description varchar(360),
-    rating int
+    rating int,
+    image varchar(255)
 );
 
 create table user (
@@ -52,37 +53,37 @@ create table review (
         references game (game_id)
 );
 
-INSERT INTO game (title, genre, release_date, developer, description, rating) VALUES
-('Portal 2', 'Puzzle', '2011-04-19', 'Valve Corporation', 'A first-person puzzle game mixing physics and humor.', 9),
-('Minecraft', 'Sandbox', '2011-11-18', 'Mojang Studios', 'A creative sandbox game to build and explore.', 10),
-('Stardew Valley', 'Simulation', '2016-02-26', 'ConcernedApe', 'A relaxing farming and life simulator.', 9),
-('DOOM (2016)', 'Shooter', '2016-05-13', 'id Software', 'A fast-paced first-person shooter.', 9),
-('The Legend of Zelda: BOTW', 'Action-Adventure', '2017-03-03', 'Nintendo', 'An open-world game with exploration and puzzles.', 10),
-('Gunfire Reborn', 'Roguelike Shooter', '2021-11-18', 'Duoyi Games', 'Fast-paced shooting with RPG elements.', 8),
-('Remnant: From The Ashes', 'Action RPG', '2019-08-20', 'Gunfire Games', 'A co-op survival-action shooter.', 8),
-('Orcs Must Die 3', 'Tower Defense', '2020-07-14', 'Robot Entertainment', 'Strategic and chaotic tower defense gameplay.', 8),
-('Deep Rock Galactic', 'FPS Co-op', '2020-05-13', 'Ghost Ship Games', 'A co-op game with mining and alien battles.', 9),
-('Avowed', 'RPG', '2024-12-01', 'Obsidian Entertainment', 'An epic RPG in a fantasy world.', 0),
-('Roblox', 'Sandbox', '2006-09-01', 'Roblox Corporation', 'A platform for creating and playing games.', 8),
-('Vampire Survivors', 'Action Roguelike', '2021-12-17', 'Luca Galante', 'Survive waves of monsters with evolving abilities.', 9),
-('Marvel Rivals', 'Action', '2023-06-15', 'Marvel Games', 'A dynamic game with iconic Marvel heroes.', 0),
-('Overwatch', 'Shooter', '2016-05-24', 'Blizzard Entertainment', 'A team-based FPS with unique heroes.', 9),
-('Diablo 4', 'Action RPG', '2023-06-06', 'Blizzard Entertainment', 'A dark action RPG in the Diablo series.', 9),
-('Starcraft 3', 'Strategy', '2024-09-15', 'Blizzard Entertainment', 'A futuristic real-time strategy game.', 0),
-('Roboquest', 'Roguelike Shooter', '2020-08-20', 'RyseUp Studios', 'High-energy roguelike shooter with robots.', 8),
-('Assassin\'s Creed: Origins', 'Action RPG', '2017-10-27', 'Ubisoft', 'Explore ancient Egypt as an assassin.', 9),
-('Destiny 2', 'Shooter', '2017-09-06', 'Bungie', 'An online multiplayer sci-fi shooter.', 8),
-('Halo Infinite', 'Shooter', '2021-12-08', '343 Industries', 'The latest chapter in the Halo series.', 9),
-('Slay the Spire', 'Deck-Building Roguelike', '2019-01-23', 'MegaCrit', 'Build decks to ascend the spire.', 9),
-('Dead Cells', 'Action Roguelike', '2018-08-07', 'Motion Twin', 'A fast-paced roguelike with action combat.', 9),
-('World War Z: Aftermath', 'Shooter', '2021-09-21', 'Saber Interactive', 'Zombie survival with co-op gameplay.', 7),
-('Heroes of the Storm', 'MOBA', '2015-06-02', 'Blizzard Entertainment', 'A MOBA featuring iconic Blizzard characters.', 7),
-('Call of Duty Modern Warfare 3', 'Shooter', '2011-11-08', 'Infinity Ward', 'A military FPS with an engaging campaign.', 8),
-('No Man\'s Sky', 'Sci-fi Adventure', '2016-08-09', 'Hello Games', 'An expansive exploration and survival game.', 9),
-('Halo Wars 2', 'Strategy', '2017-02-21', '343 Industries', 'A real-time strategy game set in the Halo universe.', 8),
-('Gears of War 4', 'Shooter', '2016-10-11', 'The Coalition', 'A gritty third-person shooter.', 8),
-('League of Legends', 'MOBA', '2009-10-27', 'Riot Games', 'A competitive online MOBA game.', 9),
-('Palworld', 'Action-Adventure', '2023-06-15', 'Pocketpair', 'An adventure with creature-collecting and survival.', 0);
+INSERT INTO game (title, genre, release_date, developer, description, rating, image) VALUES
+('Portal 2', 'Puzzle', '2011-04-19', 'Valve Corporation', 'A first-person puzzle game mixing physics and humor.', 9, '/images/portal2.png'),
+('Minecraft', 'Sandbox', '2011-11-18', 'Mojang Studios', 'A creative sandbox game to build and explore.', 10, '/images/minecraft.jpg'),
+('Stardew Valley', 'Simulation', '2016-02-26', 'ConcernedApe', 'A relaxing farming and life simulator.', 9, '/images/stardewvalley.jpg'),
+('DOOM (2016)', 'Shooter', '2016-05-13', 'id Software', 'A fast-paced first-person shooter.', 9, '/images/doom.jpg'),
+('The Legend of Zelda: BOTW', 'Action-Adventure', '2017-03-03', 'Nintendo', 'An open-world game with exploration and puzzles.', 10, '/images/zeldabotw.jpg'),
+('Gunfire Reborn', 'Roguelike Shooter', '2021-11-18', 'Duoyi Games', 'Fast-paced shooting with RPG elements.', 8, '/images/gunfirereborn.jpg'),
+('Remnant: From The Ashes', 'Action RPG', '2019-08-20', 'Gunfire Games', 'A co-op survival-action shooter.', 8, '/images/remnant.jpg'),
+('Orcs Must Die 3', 'Tower Defense', '2020-07-14', 'Robot Entertainment', 'Strategic and chaotic tower defense gameplay.', 8, '/images/orcsmustdie.jpg'),
+('Deep Rock Galactic', 'FPS Co-op', '2020-05-13', 'Ghost Ship Games', 'A co-op game with mining and alien battles.', 9, '/images/deeprock.jpg'),
+('Avowed', 'RPG', '2024-12-01', 'Obsidian Entertainment', 'An epic RPG in a fantasy world.', 0, '/images/avowed.jpg'),
+('Roblox', 'Sandbox', '2006-09-01', 'Roblox Corporation', 'A platform for creating and playing games.', 8, '/images/roblox.jpg'),
+('Vampire Survivors', 'Action Roguelike', '2021-12-17', 'Luca Galante', 'Survive waves of monsters with evolving abilities.', 9, '/images/vampiresurvivors.jpg'),
+('Marvel Rivals', 'Action', '2023-06-15', 'Marvel Games', 'A dynamic game with iconic Marvel heroes.', 0, '/images/marvelrivals.jpg'),
+('Overwatch 2', 'Shooter', '2016-05-24', 'Blizzard Entertainment', 'A team-based FPS with unique heroes.', 9, '/images/overwatch.jpg'),
+('Diablo 4', 'Action RPG', '2023-06-06', 'Blizzard Entertainment', 'A dark action RPG in the Diablo series.', 9, '/images/diablo.jpg'),
+('Starcraft 2', 'Strategy', '2010-07-27', 'Blizzard Entertainment', 'A futuristic real-time strategy game.', 0, '/images/starcraft.jpg'),
+('Roboquest', 'Roguelike Shooter', '2020-08-20', 'RyseUp Studios', 'High-energy roguelike shooter with robots.', 8, '/images/roboquest.jpg'),
+('Assassin\'s Creed: Origins', 'Action RPG', '2017-10-27', 'Ubisoft', 'Explore ancient Egypt as an assassin.', 9, '/images/origins.jpg'),
+('Destiny 2', 'Shooter', '2017-09-06', 'Bungie', 'An online multiplayer sci-fi shooter.', 8, '/images/destiny.jpg'),
+('Halo Infinite', 'Shooter', '2021-12-08', '343 Industries', 'The latest chapter in the Halo series.', 9, '/images/haloinfinite.jpg'),
+('Slay the Spire', 'Deck-Building Roguelike', '2019-01-23', 'MegaCrit', 'Build decks to ascend the spire.', 9, '/images/slaythespire.jpg'),
+('Dead Cells', 'Action Roguelike', '2018-08-07', 'Motion Twin', 'A fast-paced roguelike with action combat.', 9, '/images/deadcells.jpg'),
+('World War Z: Aftermath', 'Shooter', '2021-09-21', 'Saber Interactive', 'Zombie survival with co-op gameplay.', 7, '/images/aftermath.jpg'),
+('Heroes of the Storm', 'MOBA', '2015-06-02', 'Blizzard Entertainment', 'A MOBA featuring iconic Blizzard characters.', 7, '/images/hots.jpg'),
+('Call of Duty Modern Warfare 3', 'Shooter', '2011-11-08', 'Infinity Ward', 'A military FPS with an engaging campaign.', 8, '/images/cod.png'),
+('No Man\'s Sky', 'Sci-fi Adventure', '2016-08-09', 'Hello Games', 'An expansive exploration and survival game.', 9, '/images/nomanssky.jpg'),
+('Halo Wars 2', 'Strategy', '2017-02-21', '343 Industries', 'A real-time strategy game set in the Halo universe.', 8, '/images/halowars2.jpg'),
+('Gears of War 4', 'Shooter', '2016-10-11', 'The Coalition', 'A gritty third-person shooter.', 8, '/images/gearsofwar4.jpg'),
+('League of Legends', 'MOBA', '2009-10-27', 'Riot Games', 'A competitive online MOBA game.', 9, '/images/lol.jpg'),
+('Palworld', 'Action-Adventure', '2023-06-15', 'Pocketpair', 'An adventure with creature-collecting and survival.', 0, '/images/palworld.jpg');
 
 INSERT INTO user (user_id, first_name, last_name, username, password, authority, created_at) VALUES 
 (UUID(), 'Lilith', 'K', 'Mellifluous299', 'pass', 'USER', '2025-03-17'),
