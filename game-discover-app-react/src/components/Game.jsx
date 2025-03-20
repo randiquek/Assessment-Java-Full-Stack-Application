@@ -4,5 +4,5 @@ import '../App.css'
 export default function Game(props) {
 
     return (
-        <li key={props.title}> Title: {props.title} <br/>Genre: {props.genre} <br/>Release Date: {props.releaseDate} <br/>Developer: {props.developer} <br/>Description: {props.description} <br/>Rating: {props.rating}</li>);
+        <li key={props.title}>{props.title} <br/>{props.genre} <br/>{props.releaseDate} <br/>{props.developer} <br/>{props.description} <br/>{props.rating}</li>);
 }
