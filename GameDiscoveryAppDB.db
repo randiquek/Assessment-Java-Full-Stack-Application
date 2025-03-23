@@ -93,5 +93,6 @@ INSERT INTO wishlist (game_id, user_id, username, date_added) VALUES
 ((SELECT game_id FROM game WHERE title = 'Palworld'), (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', '2025-03-17');
 
 INSERT INTO review (review_title, user_id, username, game_id, date_posted, review_body) VALUES 
-('Breath-Taking Visuals', (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', (SELECT game_id FROM game WHERE title = 'No Man\'s Sky'), '2025-03-17', 'This game has amazing visuals with incredible detail and vast exploration');
+('Breath-Taking Visuals', (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', (SELECT game_id FROM game WHERE title = 'No Man\'s Sky'), '2025-03-17', 'This game has amazing visuals with incredible detail and vast exploration'),
+('I could play for hours', (SELECT user_id FROM user WHERE username = 'Mellifluous299'), 'Mellifluous299', (SELECT game_id FROM game WHERE title = 'Orcs Must Die 3'), '2025-03-23', 'Fun maps and I love that the devs are always adding new updates');
         

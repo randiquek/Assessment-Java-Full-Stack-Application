@@ -37,6 +37,10 @@
   background-color: #307351;
   color:#ffffff
 }
+.header-link {
+  text-decoration: none;
+  color: inherit;
+}
 
 .top-games-header{
   color: #b8b42d

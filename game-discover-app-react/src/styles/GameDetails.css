@@ -1,0 +1,50 @@
+.game-link {
+    text-decoration: none;
+    color: inherit;
+}
+.game-link:hover {
+    text-decoration: underline;
+}
+
+.game-details-container {
+    padding: 20px;
+    color: #ffffff;
+    background-color: black;
+    min-height: 100vh;
+}
+
+.game-info {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b8b42d;
+}
+
+.game-img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.reviews-container {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 2px solid #b8b42d;
+}
+
+.reviews-container h3 {
+    color: #b8b42d;
+}
+
+.reviews-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reviews-container li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #b8b42d;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+}

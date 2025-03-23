@@ -3,6 +3,7 @@ import '../styles/ViewGames.css'
 import Game from "./Game";
 import Header from "./Header";
 import { sortingUtility } from "../utilities/sortingUtility";
+import { Link } from "react-router-dom";
 
 export default function ViewGames() {
     const [games, setGames] = useState([]);
@@ -18,6 +19,7 @@ export default function ViewGames() {
             .then((data) => {
               console.log(data);
               setGames(data);
+              setSortedGames(data);
             })
     
     
@@ -43,11 +45,17 @@ export default function ViewGames() {
             </div>    
             <div className="games-containter">
                 <ul>
-                {sortedGames.map((game) => (
-                        <Game key={game.gameId} image={game.image} title={game.title}/>
-                    ))} 
+                    {sortedGames.map((game) => (
+                        <Link
+                            to={`/game-details/${game.gameId}`}
+                            key={game.gameId}
+                            className="game-link"
+                        >
+                            <Game image={game.image} title={game.title}/>
+                        </Link>
+                        ))} 
 
-                </ul>
+                    </ul>
             </div> 
             
         </div>       
