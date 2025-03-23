@@ -12,7 +12,7 @@ export default function HomePage() {
 
     return (
         <>
-        <div classname="header">
+        <div className="header">
             <Header/>
         </div>
         <div className="buttons-container">
