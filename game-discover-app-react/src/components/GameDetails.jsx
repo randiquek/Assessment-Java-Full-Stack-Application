@@ -63,10 +63,9 @@ export default function GameDetails() {
                         {reviews.map((review) => (
                             <Review
                                 key={review.reviewId}
-                                gameTitle={game.title}
+                                reviewTitle={review.reviewTitle}
                                 username={review.username}
                                 datePosted={review.datePosted}
-                                reviewTitle={review.reviewTitle}
                                 reviewBody={review.reviewBody}
                             />
                         ))}
