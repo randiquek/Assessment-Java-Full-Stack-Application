@@ -35,12 +35,6 @@ export default function GameDetails() {
     }, [gameId]);
 
 
-
-
-
-
-
-
     return (
         <div className="game-details-container">
             {game ? (
