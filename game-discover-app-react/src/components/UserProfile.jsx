@@ -3,17 +3,18 @@ import '../App.css';
 import { useParams } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import User from "./User";
+import Review from "./Review";
 
 
 export default function UserProfile() {
     const {username} = useParams();
     const [user, setUser] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
+    const [wishlists, setWishlists] = useState([]);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
 
-            
+        
         fetch(`http://localhost:8080/users/username/${username}`,
                 {
                   method: "GET",
@@ -24,17 +25,18 @@ export default function UserProfile() {
                   setUser(data);
                 });
             
-        fetch("http://localhost:8080/wishlists",
+        fetch(`http://localhost:8080/wishlists/${username}`,
             {
               method: "GET",
               headers: {"Content-Type": "application/json"},
             }).then(response => response.json())
             .then((data) => {
               console.log(data);
-              setWishlist(data);
+              setWishlists(data);
             });
+  
 
-        fetch(`http://localhost:8080/reviews/user/username/${username}`,
+        fetch(`http://localhost:8080/reviews/user/${username}`,
                 {
                   method: "GET",
                   headers: {"Content-Type": "application/json"},
@@ -42,7 +44,7 @@ export default function UserProfile() {
                 .then((data) => {
                   console.log(data);
                   setReviews(data);
-                });    
+                });     
     
     
     }, [username]);
@@ -64,13 +66,12 @@ export default function UserProfile() {
             <div className="wishlist">
                 <h2>Game Wishlist</h2>
                 <ul>
-                    {wishlist.map((item) => (
+                    {wishlists.map((wishlist) => (
                         <Wishlist
-                            key={item.wishlistId}
-                            wishlistId={item.wishlistId}
-                            title={item.title}
-                            username={item.username}
-                            dateAdded={item.dateAdded}
+                            key={wishlist.wishlistId}
+                            gameId={wishlist.gameId}
+                            username={wishlist.username}
+                            dateAdded={wishlist.dateAdded}
                         />
                     ))}
                 </ul>
@@ -78,14 +79,18 @@ export default function UserProfile() {
             <div className="reviews">
                 <h2>Game Reviews</h2>
                 <ul>
-                {reviews.length > 0 ? (
+                    {reviews.length > 0 ? (
                         reviews.map((review) => (
-                            <li key={review.reviewId}>
-                                <p>Game Title: {review.gameTitle}</p>
-                                <p>{review.reviewTitle}</p>
-                                <p>Review Body: {review.reviewBody}</p>
-                                <p>Date Posted: {review.datePosted}</p>
-                            </li>
+                            <Review
+                                key={review.reviewId}
+                                gameTitle={review.gameTitle}
+                                gameId={review.gameId}
+                                reviewTitle={review.reviewTitle}
+                                username={review.username}
+                                datePosted={review.datePosted}
+                                reviewBody={review.reviewBody}
+
+                            />
                         ))
                     ) : (
                         <p>This user hasn't written any reviews yet.</p>
