@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.user-profile-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.user-info, .wishlist, .reviews {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #b8b42d;
+    border-radius: 10px;
+    background-color: #242424;
+}
+
+.user-info h2, .wishlist h2, .reviews h2 {
+    color: #b8b42d;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-info ul, .wishlist ul, .reviews ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-info li, .wishlist li, .reviews li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #b8b42d;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.user-info li p, .wishlist li p, .reviews li p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.user-info li:hover, .wishlist li:hover, .reviews li:hover {
+    background-color: #333333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .user-profile-container {
+        padding: 10px;
+    }
+
+    .user-info, .wishlist, .reviews {
+        padding: 15px;
+    }
+
+    .user-info h2, .wishlist h2, .reviews h2 {
+        font-size: 1.5em;
+    }
+
+    .user-info li p, .wishlist li p, .reviews li p {
+        font-size: 0.9em;
+    }
+}

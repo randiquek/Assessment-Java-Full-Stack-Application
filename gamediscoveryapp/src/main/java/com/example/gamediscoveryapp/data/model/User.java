@@ -19,6 +19,8 @@ public class User {
     @Column(name = "created_at")
     LocalDate createdAt;
 
+
+
     public User() {
     }
 
@@ -95,7 +97,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 ", authority='" + authority + '\'' +
                 ", createdAt=" + createdAt +
                 '}';
