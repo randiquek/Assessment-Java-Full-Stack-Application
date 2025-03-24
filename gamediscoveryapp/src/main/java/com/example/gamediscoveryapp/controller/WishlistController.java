@@ -1,9 +1,11 @@
 package com.example.gamediscoveryapp.controller;
 
+import com.example.gamediscoveryapp.data.model.Game;
 import com.example.gamediscoveryapp.data.model.Wishlist;
 import com.example.gamediscoveryapp.data.repository.WishlistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +18,14 @@ public class WishlistController implements Serializable {
     @Autowired
     WishlistRepository wishlistRepository;
 
+
     @GetMapping()
     public List<Wishlist> getResource() {
         return wishlistRepository.findAll();
+    }
+
+    @GetMapping("/{username}")
+    public List<Wishlist> getWishlistByUsername(@PathVariable String username) {
+        return wishlistRepository.findByUsername(username);
     }
 }

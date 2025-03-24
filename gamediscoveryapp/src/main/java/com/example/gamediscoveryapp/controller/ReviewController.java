@@ -20,9 +20,6 @@ public class ReviewController implements Serializable {
     @Autowired
     ReviewRepository reviewRepository;
 
-    @Autowired
-    UserRepository userRepository;
-
     @GetMapping()
     public List<Review> getResource() {
         return reviewRepository.findAll();
@@ -33,11 +30,9 @@ public class ReviewController implements Serializable {
         return reviewRepository.findByGameId(gameId);
     }
 
-    @GetMapping("/user/username/{username}")
+    @GetMapping("/user/{username}")
     public List<Review> getReviewsByUsername(@PathVariable String username) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        return reviewRepository.findByUserId(user.getUser_id());
+        return reviewRepository.findByUsername(username);
     }
 
 

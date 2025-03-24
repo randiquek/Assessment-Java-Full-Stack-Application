@@ -19,7 +19,7 @@ public class GameController implements Serializable {
     public List<Game> getResource() {
         return gameRepository.findAll();
     }
-    @GetMapping("/{gameId}") //  localhost:8080/gameId/3
+    @GetMapping("/{gameId}")
     public Game getGameById(@PathVariable int gameId) {
         return gameRepository.findById(gameId).get();
 
