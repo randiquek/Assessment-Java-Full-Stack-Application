@@ -5,10 +5,7 @@ import com.example.gamediscoveryapp.data.model.User;
 import com.example.gamediscoveryapp.data.repository.ReviewRepository;
 import com.example.gamediscoveryapp.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,5 +32,9 @@ public class ReviewController implements Serializable {
         return reviewRepository.findByUsername(username);
     }
 
+    @PostMapping
+    public Review createReview(@RequestBody Review review) {
+        return reviewRepository.save(review);
+    }
 
 }

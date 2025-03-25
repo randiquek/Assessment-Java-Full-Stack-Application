@@ -22,8 +22,10 @@
 .header {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
+  margin-right: 100px;
+  margin-left: 100px;
+  border: 3px solid #b8b42d;
+  
   
 }
 .header-text {
@@ -47,9 +49,17 @@
 }
 
 .top-games-container {
-  margin-top: 50px;
+  margin: 100px;
   border: 2px solid #b8b42d;
   min-height: 100%;
+}
+
+.top-games-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
 }
 
 .buttons-container {
@@ -57,14 +67,23 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  
 }
 
 .signup-btn {
   padding: 20px;
   margin: 50px;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 10px;
+  background-color: #b8b42d;
 }
 
 .login-btn {
   padding: 20px;
   margin: 50px;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 10px;
+  background-color: #b8b42d;
 }
