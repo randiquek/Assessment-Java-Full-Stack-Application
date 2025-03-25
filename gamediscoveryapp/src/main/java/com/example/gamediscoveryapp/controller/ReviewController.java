@@ -37,4 +37,8 @@ public class ReviewController implements Serializable {
         return reviewRepository.save(review);
     }
 
+    @DeleteMapping("/{reviewId}")
+    public void deleteReview(@PathVariable Integer reviewId) {
+        reviewRepository.deleteById(reviewId);
+    }
 }

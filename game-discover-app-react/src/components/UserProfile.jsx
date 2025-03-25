@@ -49,6 +49,26 @@ export default function UserProfile() {
     
     }, [username]);
 
+    const removeFromWishlist = (gameId) => {
+        fetch(`http://localhost:8080/wishlists/${user.userId}/${gameId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then((response) => {
+            if (response.ok) {
+                setWishlists((wishlists) =>
+                    wishlists.filter((item) => item.gameId !== gameId)
+                );
+            } else {
+                console.error("Failed to remove from wishlist.");
+            }
+        })
+        .catch((error) => console.error("Error removing from wishlist:", error));
+    };
+
+
+
     return (
         <div className="user-profile-container">
             <div className="user-info">
@@ -66,14 +86,21 @@ export default function UserProfile() {
             <div className="wishlist">
                 <h2>Game Wishlist</h2>
                 <ul>
-                    {wishlists.map((wishlist) => (
-                        <Wishlist
-                            key={wishlist.wishlistId}
-                            gameId={wishlist.gameId}
-                            username={wishlist.username}
-                            dateAdded={wishlist.dateAdded}
-                        />
-                    ))}
+                    {wishlists.length > 0 ? (
+                    wishlists.map((wishlist) => (
+                            <li key={wishlist.wishlistId}>
+                                <Wishlist
+                                    gameId={wishlist.gameId}
+                                    username={wishlist.username}
+                                    dateAdded={wishlist.dateAdded}
+                                />
+                            <button onClick={() => removeFromWishlist(wishlist.gameId)}>Remove from Wishlist</button>
+                            </li>
+                    ))
+                ) : (
+                    <p>No games in wishlist yet.</p>
+                )}
+
                 </ul>
             </div>
             <div className="reviews">

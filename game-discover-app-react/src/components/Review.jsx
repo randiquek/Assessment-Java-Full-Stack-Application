@@ -23,7 +23,6 @@ useEffect(() =>  {
             <p>{gameTitle}</p>
             <p>{props.reviewTitle}</p>
             <p>{props.username}</p>
-            <p>{props.gameId}</p>
             <p>{props.datePosted}</p>
             <p>{props.reviewBody}</p></div>}
         </li>
