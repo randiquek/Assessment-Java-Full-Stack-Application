@@ -4,10 +4,7 @@ import com.example.gamediscoveryapp.data.model.Review;
 import com.example.gamediscoveryapp.data.model.User;
 import com.example.gamediscoveryapp.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -29,6 +26,11 @@ public class UserController implements Serializable {
     public User getUserByUsername(@PathVariable String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    @DeleteMapping("/{userId}")
+    public void deleteUser(@PathVariable UUID userId) {
+        userRepository.deleteById(userId);
     }
 
 }

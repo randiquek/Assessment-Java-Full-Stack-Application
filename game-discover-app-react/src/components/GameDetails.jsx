@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import '../App.css';
 import '../styles/GameDetails.css'
 import Review from "./Review";
@@ -8,6 +9,7 @@ import Header from "./Header";
 
 export default function GameDetails() {
     const {gameId} = useParams();
+    const {user} = useContext(UserContext);
     const [game, setGame] = useState(null);
     const [reviews, setReviews] = useState([])
     const [showReviewForm, setShowReviewForm] = useState(false);
@@ -58,6 +60,27 @@ export default function GameDetails() {
 
     };
 
+    const addToWishlist = () => {
+        const wishlistItem = {
+            userId: user.userId,
+            gameId: gameId,
+        };
+
+        fetch("http://localhost:8080/wishlists", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(wishlistItem),
+        }).then((response) => {
+            if (response.ok) {
+                alert(`${game.title} has been added to your wishlist!`);
+            } else {
+                alert("Failed to add to wishlist.");
+            }
+        }).catch((error) => console.error("Error adding to wishlist:", error))
+    };
+
 
     return (
         <>
@@ -71,6 +94,8 @@ export default function GameDetails() {
                 <p>Release Date: {game.releaseDate}</p>
                 <p>Developer: {game.developer}</p>
                 <p>Description: {game.description}</p>
+                <button onClick={addToWishlist}>Add to Wishlist</button>
+
             </div>
             ) : (
                 <p>No game details avaialble.</p>
