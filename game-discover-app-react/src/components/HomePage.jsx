@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import Review from "./Review";
 import '../App.css';
@@ -9,7 +10,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function HomePage() {
-    
+    const navigate = useNavigate();
+
+    const handleSignUpClick = () => {
+        navigate("/sign-up");
+    };
+
+    const handleLoginClick = () => {
+        navigate("/login");
+    };
+
+
 
     return (
         <>
@@ -22,8 +33,8 @@ export default function HomePage() {
             </video>
         </div>
         <div className="buttons-container">
-        <button className="signup-btn">Sign Up</button>
-        <button className="login-btn">Login</button>
+        <button className="signup-btn" onClick={handleSignUpClick}>Sign Up</button>
+        <button className="login-btn" onClick={handleLoginClick}>Login</button>
         </div>
         <div className="top-games-container">
             <h2 className="top-games-header">Top Featured Games</h2>
