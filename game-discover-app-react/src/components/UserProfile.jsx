@@ -83,7 +83,6 @@ export default function UserProfile() {
                         reviews.map((review) => (
                             <Review
                                 key={review.reviewId}
-                                gameTitle={review.gameTitle}
                                 gameId={review.gameId}
                                 reviewTitle={review.reviewTitle}
                                 username={review.username}

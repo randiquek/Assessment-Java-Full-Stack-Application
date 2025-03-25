@@ -15,7 +15,7 @@ export default function Wishlist(props) {
             }).then(response => response.json())
             .then((data) => {
               console.log(data);
-              setGameTitle(data.gameTitle);
+              setGameTitle(data.title);
             });
 
     }, [props.gameId]);
@@ -23,8 +23,8 @@ export default function Wishlist(props) {
     return (
         <li key={props.wishlistId}>
         {<div>
-            <p>{gameTitle}</p> 
-            <p>{props.gameId}</p>
+            
+            <p>{gameTitle}</p>
             <p>{props.userId}</p>
             <p>{props.username}</p>
             <p>{props.dateAdded}</p>

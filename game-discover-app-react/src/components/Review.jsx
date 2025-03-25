@@ -13,7 +13,7 @@ useEffect(() =>  {
             }).then(response => response.json())
             .then((data) => {
               console.log(data);
-              setGameTitle(data.gameTitle);
+              setGameTitle(data.title);
             });
     }, [props.gameId]);
 
