@@ -1,16 +1,17 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import Wishlist from "./Wishlist";
 import Review from "./Review";
 import '../App.css';
 import '../index.css';
-import video from '/public/video/gamepad.mp4';
 
 import Header from "./Header";
 import Footer from "./Footer";
 
 export default function HomePage() {
     const navigate = useNavigate();
+    const { user } = useContext(UserContext);
 
     const handleSignUpClick = () => {
         navigate("/sign-up");
@@ -28,13 +29,15 @@ export default function HomePage() {
             <Header/>
         </div>
         <div>
-            <video width="640" height="500" loop autoPlay muted>
-                <source src={video} type="video/mp4"/>
-            </video>
+            
         </div>
         <div className="buttons-container">
-        <button className="signup-btn" onClick={handleSignUpClick}>Sign Up</button>
-        <button className="login-btn" onClick={handleLoginClick}>Login</button>
+            {!user && (
+                <div>
+                    <button className="signup-btn" onClick={handleSignUpClick}>Sign Up</button>
+                    <button className="login-btn" onClick={handleLoginClick}>Login</button>
+                </div>
+            )}
         </div>
         <div className="top-games-container">
             <h2 className="top-games-header">Top Featured Games</h2>
