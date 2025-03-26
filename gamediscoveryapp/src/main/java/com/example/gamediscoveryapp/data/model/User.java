@@ -1,22 +1,24 @@
 package com.example.gamediscoveryapp.data.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    UUID user_id;
+    @Column(name = "user_id", nullable = false, unique = true, length = 36)
+    String userId;
     String firstName;
     String lastName;
     String username;
     String password;
     String authority;
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     LocalDate createdAt;
 
 
@@ -24,8 +26,8 @@ public class User {
     public User() {
     }
 
-    public User(UUID user_id, String firstName, String lastName, String username, String password, String authority, LocalDate createdAt) {
-        this.user_id = user_id;
+    public User(String userId, String firstName, String lastName, String username, String password, String authority, LocalDate createdAt) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -34,12 +36,12 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public UUID getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(UUID user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -93,7 +95,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
+                "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
