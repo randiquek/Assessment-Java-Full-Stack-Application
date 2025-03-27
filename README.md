@@ -22,7 +22,7 @@ Backend
 
 - Java: Core business logic and data processing
 - Spring Boot: Production ready configuration files
-- MySQL: Relational database for storing app data (rally data, users data)
+- MySQL: Relational database for storing app data (game data, users data)
 - Node.js: API server requests
 
 Frontend
