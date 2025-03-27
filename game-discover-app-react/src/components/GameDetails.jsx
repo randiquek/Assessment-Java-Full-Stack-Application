@@ -9,7 +9,7 @@ import Header from "./Header";
 
 export default function GameDetails() {
     const {gameId} = useParams();
-    const {user} = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem("user"));
     const [game, setGame] = useState(null);
     const [reviews, setReviews] = useState([])
     const [showReviewForm, setShowReviewForm] = useState(false);
@@ -66,8 +66,10 @@ export default function GameDetails() {
     const addToWishlist = () => {
         const wishlistItem = {
             userId: user.userId,
+            username: user.username,
             gameId: gameId,
         };
+        console.log(wishlistItem);
 
         fetch("http://localhost:8080/wishlists", {
             method: "POST",

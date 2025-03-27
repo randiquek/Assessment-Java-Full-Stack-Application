@@ -9,7 +9,6 @@ import java.util.UUID;
 @Table(name = "wishlist")
 public class Wishlist {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int wishlistId;
     int gameId;
     UUID userId;
