@@ -1,7 +1,7 @@
 # Assessment-Java-Full-Stack-Application
 
 ## Project: Game Discovery App
-This is an app where a user can browse games from a database. A user can make an account to be able to view all games, add to their wishlist. and write their own reviews on games. Each user will have a profile that displays all of their info such as name and username, as well as their wishlist and game reviews. An admin user can log in and have the options to remove users, remove reviews, and view app reports. 
+This is an app where a user can browse games from a database. A user can make an account to be able to view all games, add to their wishlist. and write their own reviews on games. Each user will have a profile that displays all of their info such as name and username, as well as their wishlist and game reviews. An admin user can log in and have the options to remove users and remove reviews. 
 
 ## Technical Requirements:
 Unless it's modified by a stretch goal (see below), the following are strict technical
