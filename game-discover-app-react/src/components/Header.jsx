@@ -19,9 +19,7 @@ export default function Header() {
                             <Logout />
                         </div>
                     ) : (
-                        <Link to="/login" className="login-link">
-                            Login
-                        </Link>
+                        <div></div>
                     )}
                 </div>
             </div>
