@@ -1,7 +1,7 @@
 # Assessment-Java-Full-Stack-Application
 
 ## Project: Game Discovery App
-This is an app where a user can browse games from a database. A user can make an account to be able to view all games, add to their wishlist. and write their own reviews on games. Each user will have a profile that displays all of their info such as name and username, as well as their wishlist and game reviews. An admin user can log in and have the options to remove users, remove reviews, and view app reports. 
+This is an app where a user can browse games from a database. A user can make an account to be able to view all games, add to their wishlist. and write their own reviews on games. Each user will have a profile that displays all of their info such as name and username, as well as their wishlist and game reviews. An admin user can log in and have the options to remove users and remove reviews. 
 
 ## Technical Requirements:
 Unless it's modified by a stretch goal (see below), the following are strict technical
@@ -22,7 +22,7 @@ Backend
 
 - Java: Core business logic and data processing
 - Spring Boot: Production ready configuration files
-- MySQL: Relational database for storing app data (rally data, users data)
+- MySQL: Relational database for storing app data (game data, users data)
 - Node.js: API server requests
 
 Frontend
@@ -54,7 +54,7 @@ Frontend
 ### User Story
 - User logs in
 - User is presented with main page that displays top featured games
-- User can view games by genre, top games, or new games
+- User can filter games by genre, alphabetical, or release date
 - User can view games and add to a wishlist
 - User can also write a review for the game they are viewing
 - User can also view their profile
@@ -62,7 +62,6 @@ Frontend
 ### Admin Story
 - Admin logs in with credentials
 - Admin can also remove users and reviews
-- Admin can also view reports such as popular games being added to wishlists by users
 
 ### Project Roadmap
 1. 3-10 Monday
