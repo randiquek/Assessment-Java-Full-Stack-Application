@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "user")
@@ -11,7 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "user_id", nullable = false, unique = true, length = 36)
-    String userId;
+    UUID userId;
     String firstName;
     String lastName;
     String username;
@@ -26,7 +27,7 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String firstName, String lastName, String username, String password, String authority, LocalDate createdAt) {
+    public User(UUID userId, String firstName, String lastName, String username, String password, String authority, LocalDate createdAt) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,11 +37,11 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 
