@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/auth")
@@ -30,8 +32,8 @@ public class AuthenticationController {
         if (existingUser.isPresent()) {
             map.put("error", "Username already exists!");
         } else {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            userRepository.save(user);
+            User newuser = new User(UUID.randomUUID(), user.getFirstName(), user.getLastName(), user.getUsername(), passwordEncoder.encode(user.getPassword()), "USER", LocalDate.now());
+            userRepository.save(newuser);
             map.put("message", "User registered successfully!");
         }
         return map;

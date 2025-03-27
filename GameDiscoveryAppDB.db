@@ -86,7 +86,7 @@ INSERT INTO game (title, genre, release_date, developer, description, rating, im
 ('Palworld', 'Action-Adventure', '2023-06-15', 'Pocketpair', 'An adventure with creature-collecting and survival.', 0, '/images/palworld.jpg');
 
 INSERT INTO user (user_id, first_name, last_name, username, password, authority, created_at) VALUES 
-(UUID(), 'Lilith', 'K', 'Mellifluous299', '$2a$12$3JATgC9Q5TG9/DSPC64K1ujzV7FTWi.ib59KG5ieyqjbtN2iwYwU.', 'USER', '2025-03-17'),
+(UUID(), 'Lilith', 'K', 'Mellifluous299', '$2a$10$AwPWohX5KaCoXuSCGh6l9.ivCT3mU0eCW26EdRLAba.cCDd0.oKpK', 'USER', '2025-03-17'),
 (UUID(), 'Admin', 'Admin', 'admin', '$2a$12$e83hrXB23eLINBKbXZYnLunGL6CE3wFCBA78/bWHJbi0F4rYJNWm2', 'ADMIN', '2025-03-17');
 
 INSERT INTO wishlist (game_id, user_id, username, date_added) VALUES

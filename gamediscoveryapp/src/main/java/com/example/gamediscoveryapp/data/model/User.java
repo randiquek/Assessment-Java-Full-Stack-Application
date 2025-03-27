@@ -10,7 +10,6 @@ import java.util.UUID;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "user_id", nullable = false, unique = true, length = 36)
     UUID userId;
     String firstName;

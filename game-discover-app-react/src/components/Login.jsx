@@ -34,10 +34,13 @@ export default function Login() {
         }).then((data) => {
             console.log("Backend Response:", data);
             setUser({ userId: data.userId, username: data.username, authority: data.authority});
-            localStorage.setItem("user", JSON.stringify({ userId: data.userId, username: data.username, authority: data.authority }));
+            localStorage.clear();
+            localStorage.setItem("user", { userId: data.userId, username: data.username, authority: data.authority });
             if (data.authority === "ADMIN") {
+                console.log("To Admin");
                 navigate("/admin");
             } else {
+                console.log("To User");
             navigate(`/user-profile/${data.username}`);
             }
         }).catch((error) => {

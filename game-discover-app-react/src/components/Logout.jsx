@@ -8,7 +8,7 @@ export default function Logout() {
 
     const handleLogout = () => {
         setUser(null);
-        localStorage.removeItem("user");
+        localStorage.clear();
         navigate("/");
     };
 

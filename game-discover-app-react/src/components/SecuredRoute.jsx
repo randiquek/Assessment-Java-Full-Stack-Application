@@ -4,14 +4,14 @@ import { UserContext } from "../contexts/UserContext";
 
 const SecuredRoute = ({ component, authority }) => {
     // const { user } = useContext(UserContext);
-    const user = localStorage.getItem('authority');
-    console.log(localStorage.getItem('authority'), authority);
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
 
     if (!user) {
         return <Navigate to="/" />;
     }
 
-    if (authority && !authority.includes(user)) {
+    if (authority && !authority.includes(user.authority)) {
         return <Navigate to="/" />;
     }
     console.log(component);
