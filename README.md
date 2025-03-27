@@ -54,7 +54,7 @@ Frontend
 ### User Story
 - User logs in
 - User is presented with main page that displays top featured games
-- User can view games by genre, top games, or new games
+- User can filter games by genre, alphabetical, or release date
 - User can view games and add to a wishlist
 - User can also write a review for the game they are viewing
 - User can also view their profile
@@ -62,7 +62,6 @@ Frontend
 ### Admin Story
 - Admin logs in with credentials
 - Admin can also remove users and reviews
-- Admin can also view reports such as popular games being added to wishlists by users
 
 ### Project Roadmap
 1. 3-10 Monday
