@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import '../styles/SignUp.css'
 
@@ -10,6 +11,7 @@ export default function SignUp() {
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +25,7 @@ export default function SignUp() {
             createdAt: new Date().toISOString(),
         };
 
-        fetch("http://localhost:8080/users", {
+        fetch("http://localhost:8080/auth/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -32,9 +34,22 @@ export default function SignUp() {
         })
             .then((response) => response.json())
             .then((data) => {
-                setUser(data);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                console.log("Sign-up response:", data.message);
+                alert(data.message);
+                setUser({
+                    username,
+                    authority: "USER",
+                });
+                localStorage.setItem("authority", "USER");
+                navigate("/user-profile/" + username);
             })
-            .catch((error) => console.error("Error during sign-up:", error));
+            .catch((error) => {
+                console.error("Error during sign-up:", error.message);
+                alert(error.message);
+            });
     };
 
     return (

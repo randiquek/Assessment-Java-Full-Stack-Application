@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import '../styles/Login.css';
 
@@ -9,6 +10,7 @@ export default function Login() {
     const { setUser } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,7 +19,7 @@ export default function Login() {
             username,
             password,
         };
-        fetch("http://localhost:8080/login", {
+        fetch("http://localhost:8080/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -26,9 +28,18 @@ export default function Login() {
         }).then((response) => {
             if (response.ok) {
                 return response.json();
+            } else {
+                throw new Error("Login failed");
             }
         }).then((data) => {
-            setUser(data);
+            console.log("Backend Response:", data);
+            setUser({ userId: data.userId, username: data.username, authority: data.authority});
+            localStorage.setItem("user", JSON.stringify({ userId: data.userId, username: data.username, authority: data.authority }));
+            if (data.authority === "ADMIN") {
+                navigate("/admin");
+            } else {
+            navigate(`/user-profile/${data.username}`);
+            }
         }).catch((error) => {
             console.error("Error during login:", error);
             alert("Invalid username or password.");

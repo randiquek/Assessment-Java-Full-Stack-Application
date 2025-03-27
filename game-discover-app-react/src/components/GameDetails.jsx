@@ -13,6 +13,9 @@ export default function GameDetails() {
     const [game, setGame] = useState(null);
     const [reviews, setReviews] = useState([])
     const [showReviewForm, setShowReviewForm] = useState(false);
+    
+
+
 
     useEffect(() => {
         
@@ -45,20 +48,20 @@ export default function GameDetails() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ ...newReview, gameId }),
-        }).then((response) => {
-            if (response.ok) {
-                alert("Review submission was successful");
-                return response.json();
+            body: JSON.stringify({ ...newReview, gameId, username: user.username, userId: user.userId }),
+        }).then((response) => response.json())
+        .then((data) => {
+            if (data.error) {
+                alert(data.error);
             } else {
-                alert("Review submisison failed.");
+                alert(data.message);
+                setReviews((prevReviews) => [...prevReviews, data.review]);
+                setShowReviewForm(false);
             }
-        }).then((reviewData) => {
-            setReviews((reviewList) => [...reviewList, reviewData]);
-            setShowReviewForm(false);
-        }).catch((error) => console.error("Error submitting review:", error));
+        })
+        .catch((error) => console.error("Error submitting review:", error));
 
-    };
+    }
 
     const addToWishlist = () => {
         const wishlistItem = {
@@ -119,14 +122,18 @@ export default function GameDetails() {
                         <p>No reviews available for this game.</p>
                     )}
                 </div>
-                <button onClick={() => setShowReviewForm(!showReviewForm)}>
-                    {showReviewForm ? "Cancel Add Review" : "Add a Review"}
-                </button>
-                {showReviewForm && (
-                    <div className="review-form-container">
-                        <h3>Write a Review</h3>
-                        < ReviewForm onSubmit={handleReviewSubmission} />
-                    </div>
+                {user && user.authority !== "ADMIN" && (
+                    <>  
+                        <button className="add-review-btn" onClick={() => setShowReviewForm(!showReviewForm)}>
+                            {showReviewForm ? "Cancel Add Review" : "Add a Review"}
+                        </button>
+                        {showReviewForm && (
+                            <div className="review-form-container">
+                                <h3>Write a Review</h3>
+                                <ReviewForm onSubmit={handleReviewSubmission} />
+                            </div>
+                        )}
+                    </>
                 )}
         </div>
         </>            

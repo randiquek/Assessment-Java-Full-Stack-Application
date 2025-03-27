@@ -6,6 +6,7 @@ import UserProfile from "./components/UserProfile";
 import AdminPage from "./components/AdminPage";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import SecuredRoute from "./components/SecuredRoute";
 import { UserProvider } from "./contexts/UserContext";
 import './App.css'
 
@@ -18,10 +19,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/view-games" element={<ViewGames />} />
+          <Route path="/view-games" element={<SecuredRoute component={<ViewGames />} authority="ADMIN, USER" ></SecuredRoute>} />
           <Route path="/game-details/:gameId" element={<GameDetails />} />
           <Route path="/user-profile/:username" element={<UserProfile />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin" element={<SecuredRoute component={<AdminPage />} authority="ADMIN" ></SecuredRoute>} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

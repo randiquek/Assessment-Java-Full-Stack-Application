@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -22,25 +24,33 @@ public class AuthenticationController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/signup")
-    public String signUp(@RequestBody User user) {
+    public Map<String, String> signUp(@RequestBody User user) {
+        Map<String, String> map = new HashMap<>();
         Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
         if (existingUser.isPresent()) {
-            return "Username already exists!";
+            map.put("error", "Username already exists!");
+        } else {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userRepository.save(user);
+            map.put("message", "User registered successfully!");
         }
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return "User registered successfully!";
+        return map;
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody User loginRequest) {
-        Optional<User> user = userRepository.findByUsername(loginRequest.getUsername());
-        if (user.isPresent() && passwordEncoder.matches(loginRequest.getPassword(), user.get().getPassword())) {
-            return user.get().getAuthority();
-        } else {
-            return "Invalid username or password!";
+        public Map<String, Object> login(@RequestBody User loginRequest) {
+            Map<String, Object> map = new HashMap<>();
+            Optional<User> user = userRepository.findByUsername(loginRequest.getUsername());
+            if (user.isPresent() && passwordEncoder.matches(loginRequest.getPassword(), user.get().getPassword())) {
+                map.put("userId", user.get().getUserId());
+                map.put("username", user.get().getUsername());
+                map.put("authority", user.get().getAuthority());
+                return map;
+            }
+            else {
+                return null;
+            }
         }
-    }
 
 
 }

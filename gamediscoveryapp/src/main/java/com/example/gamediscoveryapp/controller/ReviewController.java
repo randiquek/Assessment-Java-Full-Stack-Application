@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.util.*;
 
 @RestController
 @RequestMapping("/reviews")
@@ -33,12 +33,31 @@ public class ReviewController implements Serializable {
     }
 
     @PostMapping
-    public Review createReview(@RequestBody Review review) {
-        return reviewRepository.save(review);
+    public Map<String, Object> createReview(@RequestBody Review reviewRequest) {
+        Map<String, Object> map = new HashMap<>();
+        if (reviewRequest.getUsername() == null || reviewRequest.getGameId() <= 0 || reviewRequest.getReviewBody().isEmpty()) {
+            map.put("error", "Missing required fields.");
+            return map;
+        }
+        reviewRequest.setDatePosted(LocalDate.now());
+
+        Review savedReview = reviewRepository.save(reviewRequest);
+        map.put("message", "Review submitted successfully.");
+        map.put("review", savedReview);
+
+        return map;
     }
 
     @DeleteMapping("/{reviewId}")
-    public void deleteReview(@PathVariable Integer reviewId) {
-        reviewRepository.deleteById(reviewId);
+    public Map<String, String> deleteReview(@PathVariable int reviewId) {
+        Map<String, String> map = new HashMap<>();
+        if (reviewRepository.existsById(reviewId)) {
+            reviewRepository.deleteById(reviewId);
+            map.put("message", "Review deleted successfully.");
+        } else {
+            map.put("error", "Review not found.");
+        }
+        return map;
     }
+
 }

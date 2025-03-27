@@ -21,14 +21,11 @@ export default function Wishlist(props) {
     }, [props.gameId]);
 
     return (
-        <li key={props.wishlistId}>
-        {<div>
-            
+        <div>
             <p>{gameTitle}</p>
             <p>{props.userId}</p>
             <p>{props.username}</p>
             <p>{props.dateAdded}</p>
-          </div>}
-        </li>
+        </div>
     );
 }
