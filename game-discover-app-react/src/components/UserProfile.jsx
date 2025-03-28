@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import '../App.css';
 import '../styles/UserProfile.css'
 import { useParams } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import Wishlist from "./Wishlist";
 import User from "./User";
 import Review from "./Review";
@@ -13,6 +14,7 @@ export default function UserProfile() {
     const [user, setUser] = useState([]);
     const [wishlists, setWishlists] = useState([]);
     const [reviews, setReviews] = useState([]);
+
 
     useEffect(() => {
 
