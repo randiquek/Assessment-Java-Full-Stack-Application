@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import '../styles/Login.css';
 
 
@@ -76,6 +77,7 @@ return (
                 <button type="submit" className="submit-btn">Log In</button>
             </form>
         </div>
+        <Footer/>
     </div>
 );
 

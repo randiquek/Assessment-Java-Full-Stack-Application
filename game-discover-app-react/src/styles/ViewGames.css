@@ -97,18 +97,6 @@ body {
     text-align: center;
 }
 
-.footer-text {
-    position: relative;
-    margin-top: auto;
-    bottom: 0;
-    width: 100%;
-    background-color: #307351;
-    text-align: center;
-    color: white;
-    padding: 15px 0;
-    font-weight: bold;
-    border-top: 3px solid #b8b42d;
-}
 
 ul {
     display: flex;

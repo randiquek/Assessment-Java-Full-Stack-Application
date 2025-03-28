@@ -30,14 +30,12 @@ export default function HomePage() {
         <div>
             
         </div>
-        <div className="buttons-container">
             {!user && (
-                <div>
+                <div className="buttons-container">
                     <button className="signup-btn" onClick={handleSignUpClick}>Sign Up</button>
                     <button className="login-btn" onClick={handleLoginClick}>Login</button>
                 </div>
             )}
-        </div>
         <div className="top-games-container">
             <h2 className="top-games-header">Top Featured Games</h2>
             <div className="top-games-images">

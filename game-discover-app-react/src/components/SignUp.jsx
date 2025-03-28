@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import '../styles/SignUp.css'
 
 
@@ -97,6 +98,7 @@ export default function SignUp() {
                     <button className="submit-btn" type="submit">Sign Up</button>
                 </form>
             </div>
+            <Footer/>
         </div>
     );
 
