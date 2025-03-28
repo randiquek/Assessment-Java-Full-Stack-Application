@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     padding: 15px 0;
-    background-color: #307351;
+    background-color: #222;
     border-top: 2px solid #b8b42d;
     border-bottom: 2px solid #b8b42d;
 }
 
 .navbar-link {
     margin: 0 15px;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
     color: #b8b42d;
@@ -17,6 +17,6 @@
 }
 
 .navbar-link:hover {
-    color: white;
+    color: rgb(73, 73, 73);
     text-decoration: underline;
 }

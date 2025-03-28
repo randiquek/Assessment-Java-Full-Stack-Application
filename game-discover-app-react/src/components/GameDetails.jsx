@@ -6,6 +6,7 @@ import '../styles/GameDetails.css'
 import Review from "./Review";
 import ReviewForm from "./ReviewForm";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function GameDetails() {
     const {gameId} = useParams();
@@ -138,6 +139,7 @@ export default function GameDetails() {
                     </>
                 )}
         </div>
+        <Footer/>
         </>            
 
     );

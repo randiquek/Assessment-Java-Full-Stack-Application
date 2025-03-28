@@ -2,7 +2,10 @@ import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Review from "./Review";
 import '../styles/AdminPage.css'
+import '../styles/ComponentRendering.css'
+
 import Header from "./Header";
+import Footer from "./Footer";
 
 
 export default function AdminPage() {
@@ -98,6 +101,7 @@ export default function AdminPage() {
                         </ul>
                     </div>
                 </div>
+                <Footer/>
         </div>    
     );
 

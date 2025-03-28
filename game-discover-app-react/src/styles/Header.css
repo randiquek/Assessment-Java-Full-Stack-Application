@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 0 auto;
     border: 3px solid #b8b42d;
-    background-color: #307351;
+    background-color: #333534;
     color: white;
 }
 
@@ -11,17 +11,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 15px 20px;
+    font-size: 1.8em;
     font-weight: bold;
     border: none; /* Removed black border for cleaner look */
 }
 
 .header-link {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
-    font-size: 2em;
+    font-size: 1.4em;
     font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-link:hover {
+    color: #b8b42d;
+    transform: scale(1.05);
+    text-decoration: none !important;
 }
 
 .header-actions {
