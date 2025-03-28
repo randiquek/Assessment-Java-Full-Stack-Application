@@ -139,7 +139,6 @@ export default function GameDetails() {
                     </>
                 )}
         </div>
-        <Footer/>
         </>            
 
     );
