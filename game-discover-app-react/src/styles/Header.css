@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 3px solid #b8b42d;
+    background-color: #307351;
+    color: white;
+}
+
+.header-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none; /* Removed black border for cleaner look */
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1em;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-user span {
+    color: #b8b42d;
+}
+
+.logout-btn {
+    padding: 8px 15px;
+    background-color: #b8b42d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #9a9120;
+}

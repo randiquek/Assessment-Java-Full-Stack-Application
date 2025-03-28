@@ -33,9 +33,9 @@ export default function Login() {
             }
         }).then((data) => {
             console.log("Backend Response:", data);
-            setUser({ userId: data.userId, username: data.username, authority: data.authority});
+            setUser({ userId: data.userId, username: data.username, firstName: data.firstName, lastName: data.lastName, authority: data.authority, createdAt: data.createdAt});
             localStorage.clear();
-            localStorage.setItem("user", { userId: data.userId, username: data.username, authority: data.authority });
+            localStorage.setItem("user", JSON.stringify({ userId: data.userId, username: data.username, firstName: data.firstName, lastName: data.lastName, authority: data.authority, createdAt: data.createdAt }));
             if (data.authority === "ADMIN") {
                 console.log("To Admin");
                 navigate("/admin");

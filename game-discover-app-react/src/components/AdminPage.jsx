@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import Review from "./Review";
 import '../styles/AdminPage.css'
 import Header from "./Header";
@@ -67,6 +68,7 @@ export default function AdminPage() {
                                     <li key={user.userId} className="admin-list-item">
                                         <span>{user.username}</span>
                                         <button className="delete-btn" onClick={() => deleteUser(user.userId, user.username)}>Delete</button>
+                                        <Link to={`/user-profile/${user.userId}`} className="profile-link">View Profile</Link>
                                     </li>
                                 ))
                             ) : (

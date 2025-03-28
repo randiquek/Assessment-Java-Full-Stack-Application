@@ -2,7 +2,8 @@ import React, {useContext} from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Logout from './Logout';
-import '../App.css';
+import Navbar from './Navbar';
+import '../styles/Header.css';
 
 export default function Header() {
     const { user } = useContext(UserContext);
@@ -22,6 +23,7 @@ export default function Header() {
                         <div></div>
                     )}
                 </div>
+                <Navbar />
             </div>
     );
 }
