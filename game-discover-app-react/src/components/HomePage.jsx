@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import Wishlist from "./Wishlist";
 import Review from "./Review";
-import '../App.css';
-import '../index.css';
+import '../styles/HomePage.css';
 
 import Header from "./Header";
 import Footer from "./Footer";

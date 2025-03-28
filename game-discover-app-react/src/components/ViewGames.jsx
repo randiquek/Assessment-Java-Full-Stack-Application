@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import '../styles/ViewGames.css'
 import Game from "./Game";
 import Header from "./Header";
+import Footer from "./Footer";
 import { sortingUtility } from "../utilities/sortingUtility";
 import { Link } from "react-router-dom";
 
@@ -58,7 +59,8 @@ export default function ViewGames() {
                     </ul>
             </div> 
             
-        </div>       
+        </div>  
+        <Footer/>     
         </>
     )
 

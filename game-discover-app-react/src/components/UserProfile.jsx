@@ -7,6 +7,7 @@ import Wishlist from "./Wishlist";
 import User from "./User";
 import Review from "./Review";
 import Header from "./Header";
+import Footer from "./Footer";
 
 
 export default function UserProfile() {
@@ -130,6 +131,7 @@ export default function UserProfile() {
                     </ul>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 

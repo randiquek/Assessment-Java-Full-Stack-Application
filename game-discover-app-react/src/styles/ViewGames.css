@@ -6,104 +6,67 @@ body {
     padding: 0;
 }
 
-.game-link {
-    text-decoration: none;
-    color: inherit;
-}
 
-.game-link:hover {
-    text-decoration: underline;
-}
-
-.game-details-container {
-    padding: 20px;
-    background-color: black;
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.game-info {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #b8b42d;
-    border: 2px solid #b8b42d;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #1a1a1a;
-}
-
-.game-img {
-    width: 300px;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 2px solid #b8b42d;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-}
-
-.reviews-container {
+.page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    min-height: calc(100vh - 160px); 
     padding: 20px;
-    border-top: 2px solid #b8b42d;
-    color: #ffffff;
 }
 
-.reviews-container h3 {
-    text-align: center;
-    font-size: 1.8em;
-    color: #b8b42d;
-    margin-bottom: 20px;
-}
-
-.reviews-container ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-.reviews-container li {
+.filter-container {
+    border: 2px solid #b8b42d;
     width: 80%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #b8b42d;
-    border-radius: 5px;
-    background-color: #242424;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.review-row p {
-    margin: 5px 0;
-    font-size: 1em;
-    color: #ffffff;
-    text-align: left;
-}
-
-.reviews-container li:hover {
-    background-color: #333333;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-}
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    padding: 20px;
     margin-top: 50px;
-    padding: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+.filter-container p {
+    font-size: 1.2em;
+    color: #b8b42d;
+    margin-bottom: 15px;
+}
+
+.filter-container button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #b8b42d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.filter-container button:hover {
+    transform: scale(1.05);
+    background-color: #9a9120;
 }
 
 .games-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
+    gap: 20px;
+    width: 100%;
+}
+
+.game-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-link:hover {
+    transform: scale(1.05);
+    text-decoration: none;
 }
 
 .game-item {
@@ -134,20 +97,24 @@ ul {
     text-align: center;
 }
 
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.footer-text {
+    position: relative;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #307351;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    font-weight: bold;
+    border-top: 3px solid #b8b42d;
 }
 
-.filter-container {
-    border: 2px solid #b8b42d;
-    width: 80%;
-    padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    text-align: center;
-    background-color: #1a1a1a;
-    border-radius: 10px;
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }

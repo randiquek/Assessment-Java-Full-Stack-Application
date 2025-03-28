@@ -1,70 +1,132 @@
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .admin-page-container {
     padding: 20px;
-    background-color: #b8b42d;
-    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #242424;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    font-size: 2em;
+    color: #b8b42d;
     margin-bottom: 20px;
 }
 
-.admin-section {
-    background-color: #b8b42d;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
+.users-section, .reviews-section {
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b8b42d;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-h3 {
-    color: #444;
-    border-bottom: 2px solid #307351;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+.users-section h3, .reviews-section h3 {
+    font-size: 1.8em;
+    color: #b8b42d;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .admin-list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #444444;
-    border: 1px solid #eaeaea;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #b8b42d;
     border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #333333;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review-details p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #000000;
+.admin-list-item:hover {
+    background-color: #444444;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.admin-list-item span {
+    flex: 1;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.profile-link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #b8b42d;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.profile-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .delete-btn {
-    background-color: black;
-    color: #ffffff;
+    margin-left: auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #b8b42d;
     border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-    background-color: #307351;
+    transform: scale(1.05);
+    background-color: #9a9120;
 }
 
 p {
     margin: 0;
-    color: #000000;
+    font-size: 1em;
+    color: #b8b42d;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .admin-page-container {
+        padding: 10px;
+    }
+
+    .users-section, .reviews-section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-link, .delete-btn {
+        font-size: 0.9em;
+    }
 }
