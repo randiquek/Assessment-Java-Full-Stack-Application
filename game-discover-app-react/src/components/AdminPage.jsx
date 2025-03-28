@@ -101,7 +101,7 @@ export default function AdminPage() {
                         </ul>
                     </div>
                 </div>
-                <Footer/>
+            
         </div>    
     );
 
