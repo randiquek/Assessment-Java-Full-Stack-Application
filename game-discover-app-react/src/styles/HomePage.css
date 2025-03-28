@@ -24,7 +24,7 @@ body {
     font-weight: bold;
     color: white;
     background-color: #b8b42d;
-    border: none;
+    border: 3px solid darkgreen;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
