@@ -11,10 +11,10 @@ bridge table doesn't count.
 2. MySQL for data management
 3. Spring Boot, MVC, JDBC, Testing, and Security
 4. An HTML and CSS UI that's built with React or Thymeleaf
-5. At least one async JavaScript HTTP request for a Thymeleaf project
+5. At least one async JavaScript HTTP request
 6. Sensible layering and pattern choices
 7. At least one UI secured by role
-8. A full test suite that covers the domain and data layers
+
 
 ## Technology Stack
 
